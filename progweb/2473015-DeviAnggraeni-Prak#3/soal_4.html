@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2473015-Devi Anggraeni N. W.</title>
+</head>
+<body>
+    <table border="1" align="center" width="350" cellpadding="10" cellspacing="0">
+        <tr>
+            <td align="left">
+                <h2>Form Tambah Data User</h2>
+
+                <form>
+                    <table border="0" width="100%">
+                        <tr>
+                            <td width="150">Name</td>
+                            <td width="5">:</td>
+                            <td><input type="text" size="20" 
+                                required oninvalid="this.setCustomValidity('Name is required!!!')"
+                                oninput="this.setCustomValidity('')"></td>
+                        </tr>
+
+                        <tr>
+                            <td width="150">Address</td>
+                            <td width="5">:</td>
+                            <td><input type="text" size="20"
+                                required oninvalid="this.setCustomValidity('Address is required!!!')"
+                                oninput="this.setCustomValidity('')"></td>
+                        </tr>
+
+                        <tr>
+                            <td width="150">Email</td>
+                            <td width="5">:</td>
+                            <td><input type="email" size="20" 
+                                required oninvalid="this.setCustomValidity('Sertakan ‘@’ pada alamat email ini.')"
+                                oninput="this.setCustomValidity('')"></td>
+                        </tr>
+
+                        <tr>
+                            <td width="150">Home Page</td>
+                            <td width="5">:</td>
+                            <td><input type="url" size="20"></td>
+                        </tr>
+
+                        <tr>
+                            <td width="150">Birthday</td>
+                            <td width="5">:</td>
+                            <td><input type="date"></td>
+                        </tr>
+
+                        <tr>
+                            <td width="150">Favorit Color</td>
+                            <td width="5">:</td>
+                            <td><input type="color"></td>
+                        </tr>
+
+                        <tr>
+                            <td width="150">IPK</td>
+                            <td width="5">:</td>
+                            <td>
+                                <input type="number" min="0" max="4" step="0.1" value="0">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td width="150">Phone Number</td>
+                            <td width="5">:</td>
+                            <td>
+                                <input type="tel" size="20"
+                                pattern="[0-9]{3}-[0-9]{7,10}"
+                                title="Format: ###-#######">
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <input type="submit" value="Add">
+                            </td>
+                        </tr>
+
+                    </table>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
