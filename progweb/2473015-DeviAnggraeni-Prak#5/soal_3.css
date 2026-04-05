@@ -1,0 +1,32 @@
+.div{
+    width: 600px;
+    text-align: justify;
+}
+.header{
+    height: 70px;
+    background: red;
+    margin-bottom: 5px;
+}
+.biru{
+    height: 190px;
+    width: 145px;
+    background: blue;
+    float: left;
+}
+.hijau{
+    text-indent: 40px;
+    width: 450px;
+    background: green;
+    float: left;
+    padding: 10px;
+    margin-left: 5px;
+    box-sizing: border-box;
+}
+.kuning{
+    width: 110px;
+    height: 110px;
+    background: yellow;
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
