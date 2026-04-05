@@ -1,0 +1,27 @@
+.container{
+    position: relative;
+}
+.circle{
+    position: absolute;
+    padding: 10px;
+}
+.left{
+    left: 0;
+    z-index: 1;
+}
+.left2{
+    left: 0;
+    z-index: 3;
+}
+.middle{
+    left: 60px;
+    z-index: 2;
+}
+.right{
+    left: 120px;
+    z-index: 1;
+}
+.right2{
+    left: 120px;
+    z-index: 3;
+}
