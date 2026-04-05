@@ -1,0 +1,35 @@
+ul{
+	list-style-type:none;
+	padding:0;
+}
+
+li.satu,li.news{
+    margin: 3px;
+	float:left;
+}
+
+a{
+	width:120px;
+	display:block;
+    color: black;
+	border-color: grey;
+	font-weight:bold;
+	padding:4px;
+    border-style: dotted;
+    border-width: 2px;
+	text-align:center;
+	text-decoration:none;
+}
+
+a:hover{
+    color: white;
+	background-color: black;
+}
+
+li.news:hover ul{
+	display:block;
+}
+
+li.news ul{
+	display:none;
+}
