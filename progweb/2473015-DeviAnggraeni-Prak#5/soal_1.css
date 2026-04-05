@@ -1,0 +1,40 @@
+.borderstar{
+    position: relative;
+    display: inline-block;
+}
+.borderstar img{
+    display: block;
+}
+.semuasudut{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 5px solid #FF0000;
+}
+.sudutkiriatas{
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+.sudutkananatas{
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+.sudutkiribawah{
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+}
+.sudutkananbawah{
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+.borderstar:hover .semuasudut{
+    border-color: #FF00FF;
+}
