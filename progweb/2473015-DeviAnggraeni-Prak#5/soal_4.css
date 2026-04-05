@@ -1,0 +1,21 @@
+.navigasi{
+    list-style: none;
+    padding: 10px;
+    background: #AA0000;
+    overflow: hidden;
+}
+.navigasi li{
+    float: left;
+    width: 20%;
+    height: 90px;
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    background: url(src/nav_left.gif) top left no-repeat;
+    position: relative;
+}
+.navigasi li span{
+    position: absolute;
+    bottom: 5px;
+    left: 15px;
+}
