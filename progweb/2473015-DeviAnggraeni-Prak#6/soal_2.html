@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2473015-Devi Anggraeni N. W.</title>
+    <link rel="stylesheet" href="soal_2.css">
+    
+    <script type="text/javascript">
+        function buatTabelPerkalian() {
+            var n;
+            do {
+                n = prompt("A number?");
+                
+                if (n === null) return;
+
+            } while (isNaN(n) || n.trim() == "");
+
+            n = parseInt(n);
+            
+            var hasil = "";
+            hasil += "<table>";
+            
+            for (var i = 1; i <= n; i++) {
+                hasil += "<tr>";
+                hasil += "<td>" + i + "</td>";
+                hasil += "<td>x</td>";
+                hasil += "<td>" + n + "</td>";
+                hasil += "<td>=</td>";
+                hasil += "<td>" + (i * n) + "</td>";
+                hasil += "</tr>";
+            }
+            
+            hasil += "</table>";
+            document.getElementById("tabel-container").innerHTML = hasil;
+        }
+    </script>
+</head>
+<body onload="buatTabelPerkalian()">
+
+    <div id="tabel-container">
+        </div>
+
+</body>
+</html>
