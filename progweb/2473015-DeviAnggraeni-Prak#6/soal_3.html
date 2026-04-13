@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2473015-Devi Anggraeni N. W.</title>
+<link rel="stylesheet" href="soal_3.css">
+
+</head>
+<body>
+        <label>Tinggi Piramida:</label>
+        <input type="text" id="txtTinggi">
+        <br>
+    </div>
+    
+    <button onclick="buatPiramida()">proses</button>
+
+    <table id="pyramid"></table>
+</div>
+
+<script>
+function buatPiramida() {
+    var input = document.getElementById("txtTinggi").value;
+    
+    if (isNaN(input) || input.trim() === "") {
+        alert("Masukkan angka yang valid!");
+        return;
+    }
+    var t = parseInt(input);
+    var table = document.getElementById("pyramid");
+    var html = "";
+
+    for (var i = 1; i <= t; i++) {
+        html += "<tr>";
+
+        //space kosong di kiri
+        for (var j = 1; j <= t - i; j++) {
+            html += "<td class='empty'></td>";
+        }
+
+        //blok oren piramida
+        for (var k = 1; k <= i * 2 - 1; k++) {
+            html += "<td></td>";
+        }
+
+        //space kosong di kanan
+        for (var l = 1; l <= t - i; l++) {
+            html += "<td class='empty'></td>";
+        }
+
+        html += "</tr>";
+    }
+
+    table.innerHTML = html;
+}
+</script>
+
+</body>
+</html>
