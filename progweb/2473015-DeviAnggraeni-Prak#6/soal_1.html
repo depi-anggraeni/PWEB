@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473015-Devi Anggraeni N. W.</title>
+    <link rel="stylesheet" href="soal_1.css">
+</head>
+
+<body>
+<div class="container">
+    <div class="input-group">
+        <label>Angka Pertama :</label>
+        <input type="text" id="num1">
+    </div>
+    
+    <div class="input-group">
+        <label>Angka Kedua :</label>
+        <input type="text" id="num2">
+    </div>
+
+    <button onclick="hitung()">Count</button>
+
+    <table>
+        <tr>
+            <td id="input1"></td>
+            <td>+</td>
+            <td id="input2"></td>
+            <td>=</td>
+            <td id="hasil1"></td>
+        </tr>
+        <tr>
+            <td id="input21"></td>
+            <td>-</td>
+            <td id="input22"></td>
+            <td>=</td>
+            <td id="hasil2"></td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+    function hitung() {
+        var val1 = document.getElementById("num1").value;
+        var val2 = document.getElementById("num2").value;
+
+        var a = parseInt(val1);
+        var b = parseInt(val2);
+
+        if (isNaN(a) && isNaN(b)) {
+            alert("angka pertama dan kedua harus angka");
+        } else if (isNaN(a)) {
+            alert("angka pertama bukan angka");
+        } else if (isNaN(b)) {
+            alert("angka kedua harus angka");
+        } else {
+            document.getElementById("input1").innerHTML = a;
+            document.getElementById("input2").innerHTML = b;
+            document.getElementById("hasil1").innerHTML = a + b;
+
+            document.getElementById("input21").innerHTML = a;
+            document.getElementById("input22").innerHTML = b;
+            document.getElementById("hasil2").innerHTML = a - b;
+        }
+    }
+</script>
+</body>
+</html>
