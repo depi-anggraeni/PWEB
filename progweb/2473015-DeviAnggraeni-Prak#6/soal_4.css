@@ -1,0 +1,32 @@
+table{
+    border: 2px solid grey;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+}
+
+td{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.biru{
+    color: blue;
+    font-weight: bold;
+    text-align: right;
+}
+
+/*teks input hitam*/
+input[type="text"] {
+    color: black;
+    border: 1px solid black;
+}
+
+/*button jadi biru*/
+input[type="button"] {
+    color: blue;
+}
+
+select{
+    width: 150px;
+    padding: 3px;
+}
