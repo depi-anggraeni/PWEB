@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473015-Devi Anggraeni</title>
+</body>
+</html>
+    <style>
+        body{
+            margin: 10px;
+        }
+
+        label{
+            display: inline-block;
+            width: 80px;
+            vertical-align: top;
+        }
+
+        textarea{
+            resize: none;
+            overflow-y: scroll;
+        }
+
+        #txt2{
+            width: 50px;
+            position: absolute;
+            text-align: right;
+            margin-left: 340px;
+        }
+    </style>
+
+    <script>
+        function Call(ob){
+            var obval = ob.value;
+
+            if(obval.length > 256){
+                ob.value = obval.substr(0,256);
+            }
+
+            document.getElementById("txt2").value = ob.value.length + "/256";
+        }
+    </script>
+</head>
+
+<body>
+
+<h2>Character Counter</h2>
+
+<label>Judul:</label>
+<input type="text">
+
+<br><br>
+
+<label>Deskripsi:</label>
+<textarea rows="5" cols="40"
+onkeyup="Call(this)"
+onkeydown="Call(this)">
+</textarea>
+
+<br>
+
+<input type="text" id="txt2" value="0/256" readonly>
+
+</body>
+</html>
