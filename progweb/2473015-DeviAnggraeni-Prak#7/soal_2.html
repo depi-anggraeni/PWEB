@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473015-Devi Anggraeni</title>
+
+    <style>
+        body {
+            margin: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td, th {
+            border: 1px solid white;
+            padding: 5px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #abbcab;
+        }
+
+        .biru {
+            background-color: #aaccff;
+        }
+
+        .oren {
+            background-color: #ffccaa;
+        }
+
+        .c3 {
+            background-color: #CCFFAA;
+        }
+    </style>
+
+    <script>
+        function mouseIn(id) {
+            document.getElementById(id).className = "c3";
+        }
+
+        function mouseOut(id, warnaAwal) {
+            document.getElementById(id).className = warnaAwal;
+        }
+    </script>
+
+</head>
+
+<body>
+<table>
+    <tr>
+        <th>Position</th>
+        <th>Programming Language</th>
+        <th>Ratings</th>
+    </tr>
+
+    <tr id="row1" class="biru"
+        onmouseover="mouseIn('row1')"
+        onmouseout="mouseOut('row1','biru')">
+        <td>1</td>
+        <td>C</td>
+        <td>18.058%</td>
+    </tr>
+
+    <tr id="row2" class="oren"
+        onmouseover="mouseIn('row2')"
+        onmouseout="mouseOut('row2','oren')">
+        <td>2</td>
+        <td>Java</td>
+        <td>18.051%</td>
+    </tr>
+
+    <tr id="row3" class="biru"
+        onmouseover="mouseIn('row3')"
+        onmouseout="mouseOut('row3','biru')">
+        <td>3</td>
+        <td>PHP</td>
+        <td>9.707%</td>
+    </tr>
+
+    <tr id="row4" class="oren"
+        onmouseover="mouseIn('row4')"
+        onmouseout="mouseOut('row4','oren')">
+        <td>4</td>
+        <td>(Visual) Basic</td>
+        <td>6.392%</td>
+    </tr>
+
+</table>
+
+</body>
+</html>
