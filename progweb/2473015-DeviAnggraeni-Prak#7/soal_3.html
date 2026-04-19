@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473015-Devi Anggraeni</title>
+
+    <script>
+        var data = [];
+
+        function tambah() {
+            var isi = document.getElementById("txtData").value;
+
+            if (isi != "") {
+                data.push(parseInt(isi));
+            }
+
+            document.getElementById("txtData").value = "";
+        }
+
+        function process(action) {
+            let hasil = document.getElementById("hasil");
+            if (action === "display") {
+                hasil.value = array.join(", ");
+
+            } else if (action === "count") {
+                hasil.value = array.length;
+
+            } else if (action === "sum") {
+                let sum = array.reduce((a, b) => a + b, 0);
+                hasil.value = sum;
+
+            } else if (action === "avg") {
+                let avg = array.length ?
+                    array.reduce((a, b) => a + b, 0) / array.length : 0;
+                hasil.value = avg;
+
+            } else if (action === "max") {
+                hasil.value = Math.max(...array);
+
+            } else if (action === "min") {
+                hasil.value = Math.min(...array);
+
+            } else if (action === "ganjil") {
+                hasil.value = array.filter(x => x % 2 !== 0).join(", ");
+
+            } else if (action === "genap") {
+                hasil.value = array.filter(x => x % 2 === 0).join(", ");
+
+            } else if (action === "hapus") {
+                array = [];
+                hasil.value = "";
+            }
+        }
+    </script>
+</head>
+
+<body>
+Data :
+<input type="text" id="txtData">
+<br>
+<input type="button" value="Add" onclick="tambah()">
+
+<select id="menu" onchange="proses()">
+    <option value="">Pilih Operasi</option>
+    <option value="display">Display</option>
+    <option value="count">Count</option>
+    <option value="sum">Sum</option>
+    <option value="average">Average</option>
+    <option value="max">Max</option>
+    <option value="min">Min</option>
+    <option value="ganjil">Ganjil</option>
+    <option value="genap">Genap</option>
+    <option value="hapus">Hapus</option>
+</select>
+
+<br>
+
+Hasil :
+<input type="text" id="txtHasil" readonly>
+
+</body>
+</html>
