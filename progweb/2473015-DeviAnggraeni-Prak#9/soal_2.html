@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473015-Devi Anggraeni</title>
+    <script src="jquery.js"></script>
+    <style>
+        body{
+            line-height: 23px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <input type="text" id="txtNama">
+        <button id="btnAdd">Add</button>
+        <button id="btnSearch">Search</button>
+
+        <div>
+            <div>John Resig</div>
+            <div>George Martin</div>
+            <div>Malcon John Sinclair</div>
+            <div>J. Ohn</div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#btnAdd").click(function(){
+                var nama = $("#txtNama").val();
+
+                if(nama != ""){
+                    $("<div>" + nama + "</div>").appendTo("#daftarNama");
+                    $("#txtNama").val("");
+                }
+            });
+
+            $("#btnSearch").click(function(){
+                var cari = $("#txtNama").val();
+
+                $("#daftarNama div").css("text-decoration", "none");
+
+                $("#daftarNama div:contains('" + cari + "')")
+                    .css("text-decoration", "underline");
+            });
+
+        });
+    </script>
+
+</body>
+</html>
