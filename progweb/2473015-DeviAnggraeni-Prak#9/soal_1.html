@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473015-Devi Anggraeni</title>
+    <script src="jquery.js"></script>
+<style>
+.menu{
+    display: flex;
+    gap: 50px;
+    background: white;
+    padding: 5px;
+    text-decoration: underline;
+    color: white;
+}
+
+.menu > li {
+    list-style: none;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    background: #ff2b8a;
+    padding: 5px 15px;
+    min-width: 129px;
+}
+
+.menu li ol {
+    display: none;
+    position: absolute;
+    left: 0;
+    border: 4px solid #ff2b8a;
+    min-width: 150px;
+    padding-left: 0;
+}
+
+.menu li ol li {
+    list-style: none;
+    color: black;
+    text-align: left;
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+
+<ol class="menu">
+    <li>jQuery
+        <ol>
+            <li>Download</li>
+            <li>Documentation</li>
+            <li>Blog</li>
+        </ol>
+    </li>
+
+    <li>Community
+        <ol>
+            <li>Mailing List</li>
+            <li>Tutorials</li>
+            <li>Demos</li>
+            <li>Plugins</li>
+        </ol>
+    </li>
+
+    <li>Development
+        <ol>
+            <li>Source Code</li>
+            <li>Bug Tracking</li>
+            <li>Recent Changes</li>
+        </ol>
+    </li>
+</ol>
+
+<script>
+$(document).ready(function(){
+    $(".menu > li").hover(
+        function(){
+            $(".menu li ol").hide();
+            $(this).children("ol").stop(true,true).slideDown();
+        },
+        function(){
+            $(this).children("ol").stop(true,true).slideUp();
+        }
+    );
+});
+</script>
+
+</body>
+</html>
