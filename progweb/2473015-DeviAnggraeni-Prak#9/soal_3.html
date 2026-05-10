@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473015-Devi Anggraeni</title>
+    <script src="jquery.js"></script>
+
+    <style>
+
+        .container{
+            width: 500px;
+        }
+
+        .kotak{
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            float: left;
+            border: 2px solid blue;
+            background-color: white;
+        }
+
+        .clear{
+            clear:left;
+        }
+
+        button{
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <button>Change colors</button>
+
+    <div class="container">
+
+        <div class="kotak"></div>
+        <div class="kotak"></div>
+        <div class="kotak"></div>
+        <div class="kotak"></div>
+        <div class="kotak"></div>
+
+        <div class="kotak"></div>
+        <div class="kotak"></div>
+        <div class="kotak"></div>
+
+    </div>
+
+    <script>
+
+        $("button").click(function () {
+
+            $(".kotak").each(function (index, domEle) {
+
+                if($(domEle).attr("id") == "merah"){
+                    return false;
+                }
+
+                $(domEle).css("background-color", "yellow");
+
+            });
+
+        });
+
+        $(".kotak").click(function(){
+
+            $(".kotak").removeAttr("id");
+
+            $(this).attr("id", "merah");
+
+            $(".kotak").css("background-color","white");
+
+            $(this).css("background-color", "red");
+
+        });
+
+    </script>
+
+</body>
+</html>
