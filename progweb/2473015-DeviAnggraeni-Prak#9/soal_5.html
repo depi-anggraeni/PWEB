@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473015-Devi Anggraeni</title>
+    <script src="jquery.js"></script>
+    <style>
+
+        .container{
+            padding: 15px;
+            border: 1px solid #cfcfcf;
+            background-color: #f7f7f7;
+        }
+
+        #txtCari{
+            width: 95%;
+            padding: 7px;
+            margin-bottom: 15px;
+        }
+
+        .nama{
+            margin-bottom: 6px;
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <input type="text" id="txtCari" placeholder="Search company">
+
+        <div class="nama">Sun Microsystem</div>
+        <div class="nama">Apache Software Foundation</div>
+        <div class="nama">Oracle Coorporation</div>
+        <div class="nama">International Bussiness Machines</div>
+        <div class="nama">Microsoft Coorporation</div>
+        <div class="nama">Apple Inc</div>
+        <div class="nama">Sap Ag</div>
+        <div class="nama">Accenture</div>
+        <div class="nama">Computer Sciences Coorporation</div>
+        <div class="nama">Google</div>
+        <div class="nama">Softbank</div>
+        <div class="nama">Yahoo</div>
+
+    </div>
+
+    <script>
+
+        $(document).ready(function(){
+
+            $("#txtCari").keyup(function(){
+
+                var cari = $(this).val().toLowerCase();
+
+                $(".nama").css("color","black");
+
+                $(".nama").each(function(){
+
+                    var isi = $(this).text().toLowerCase();
+
+                    if(isi.indexOf(cari) != -1 && cari != ""){
+                        $(this).css("color","red");
+                    }
+
+                });
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
