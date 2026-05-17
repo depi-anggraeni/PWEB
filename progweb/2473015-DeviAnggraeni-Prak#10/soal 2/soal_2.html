@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473015-Devi Anggraeni</title>
+
+    <script src="jquery.js"></script>
+    <style>
+        .kotak{
+            border-collapse: collapse;
+            width: 350px;
+            margin-bottom: 20px;
+        }
+        .kotak td{
+            border: 1px solid black;
+            padding: 8px 12px;
+        }
+        .tabelKonten{
+            border-collapse: separate;
+            width: 700px;
+        }
+        .tabelKonten td{
+            border: 1px solid black;
+            padding: 15px;
+        }
+        .judulWeb{
+            text-align: center;
+            padding: 10px 0;
+        }
+        .judulWeb a{
+            font-size: 28px;
+            font-weight: bold;
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .isiArtikel{
+            margin-bottom: 25px;
+        }
+        .penulis{
+            margin: 5px 0 15px 0;
+        }
+        a{
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <table class="kotak" id="tabelAwal">
+        <tr><td>Title</td></tr>
+        <tr><td>Content</td></tr>
+        <tr><td>Generator</td></tr>
+    </table>
+
+    <button id="btnLook">Look</button>
+    
+    <div id="output"></div>
+
+    <script>
+        $(document).ready(function(){
+            $("#btnLook").click(function(){
+                $.ajax({
+                    url : "SIJson.txt",
+                    dataType : "text",
+                    success : function(teksJson){
+                        let hasilJson = JSON.parse(teksJson.trim());
+                        
+                        $("#tabelAwal, #btnLook").hide();
+
+                        let tampilData = `
+                            <table class="tabelKonten">
+                                <tr>
+                                    <td>
+                                        <div class="judulWeb">
+                                            <a href="${hasilJson.link}">${hasilJson.title}</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        `;
+                        tampilData += `<table class="tabelKonten"><tr><td>`;
+                        
+                        $.each(hasilJson.items, function(i, dataItem){
+                            tampilData += `
+                                <div class="isiArtikel">
+                                    <a href="#" style="font-weight:bold; font-size:1.2em;">${dataItem.title}</a>
+                                    <div class="penulis">
+                                        By : ${dataItem.author} / <i>${dataItem.published}</i>
+                                    </div>
+                                    <div class="deskripsi">${dataItem.description}</div>
+                                    <div style="margin-top:10px;">
+                                        Universitas : <a href="${dataItem.universitas.m}">Click Here</a>
+                                    </div>
+                                    <div>Tag(s) : ${dataItem.tags}</div>
+                                </div>
+                            `;
+                        });
+                        
+                        tampilData += `</td></tr></table>`;
+
+                        tampilData += `
+                            <table class="tabelKonten">
+                                <tr>
+                                    <td>&copy; ${hasilJson.generator}</td>
+                                </tr>
+                            </table>
+                        `;
+
+                        $("#output").html(tampilData).show();
+                    },
+                    error : function(){
+                        alert("File SIJson.txt gagal dibaca");
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
