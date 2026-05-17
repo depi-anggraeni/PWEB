@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2473015-Devi Anggraeni</title>
+    <style>
+        body{
+            cursor: pointer;
+        }
+        filterkelas{
+            border: 1px solid black;
+        }
+        table{
+            border-collapse: collapse;
+            margin-top: 20px;
+            padding: 10px;
+        }
+        th,td{
+            border: 1px solid black;
+            text-align: left;
+            padding: 5px;
+        }
+        th{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Selamat! Berikut adalah Daftar Mahasiswa yang 
+        mendapat Nilai A Pemrograman Web SI Tahun Ajaran 2023/2024</h2>
+    <div class="filterkelas">
+        <input type="radio" name="kelas" value="all" checked> All<br>
+        <input type="radio" name="kelas" value="A"> Kelas A<br>
+        <input type="radio" name="kelas" value="B"> Kelas B<br>
+        <button type="button" id="klikcari">Search</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>NRP</th>
+                <th>NAMA</th>
+                <th>KELAS</th>
+                <th>NILAI AKHIR</th>
+            </tr>
+        </thead>
+        <tbody id="tabelData"></tbody>
+    </table>
+<script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#klikcari").click(function() {
+                var kelas = $(":radio[name='kelas']:checked").val();
+                var fileUrl = "";
+                
+                if (kelas === "all") {
+                    fileUrl = "nilai.js"; 
+                } else if (kelas === "A") {
+                    fileUrl = "nilaiA.js"; 
+                } else if (kelas === "B") {
+                    fileUrl = "nilaiB.js"; 
+                }
+
+                if(fileUrl !== "") {
+                    $.getJSON(fileUrl, function(data) { 
+                        var tbody = $("#tabelData");
+                        tbody.empty(); 
+                        $.each(data.nilai, function(index, mhs) {
+                            var row = "<tr>" +
+                                "<td>" + mhs.nrp + "</td>" +
+                                "<td>" + mhs.nama + "</td>" +
+                                "<td>" + mhs.kelas + "</td>" +
+                                "<td>" + mhs.nilaiakhir + "</td>" + 
+                                "</tr>";
+                            tbody.append(row);
+                        });
+                        $("#tabelData tr:even").css("background-color", "#FFFFCC"); 
+                        $("#tabelData tr:odd").css("background-color", "#CCFFAA"); 
+                        
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
